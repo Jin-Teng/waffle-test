@@ -1,5 +1,21 @@
+## mock api
+```
+/posts
+/posts/counts
+/posts/counts?date=2020-08-10
+/posts/counts?date=2020-08-09
+/posts/counts?begin_timestamp=2020-08-04&end_timestamp=2020-08-10
+
+/users/login
+/users/logout
+/users/profile
+```
+
+
 ## Mock API
 * use JSON server
+* install `npm install json-server`
+* run JSON server `json-server --watch --routes routes.json db.json`
 
 ## Color scheme
 * use scss global variables
