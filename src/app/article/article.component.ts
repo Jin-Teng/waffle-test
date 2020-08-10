@@ -67,6 +67,10 @@ export class ArticleComponent implements OnInit {
     );
   }
 
+  /**
+   * inputText is two-way biding
+   * search posts by inputText
+   */
   searchText(){
     this.posts$ = this.dataService.getPosts().pipe(
       map( data => data.data as Post[] ),
@@ -77,6 +81,10 @@ export class ArticleComponent implements OnInit {
     );
   }
 
+  /**
+   * inputDate is two-way biding
+   * filter posts by inputDate
+   */
   filterDate() {
     this.inputDate = this.datePipe.transform(this.inputDate, 'yyyy-MM-dd');
     this.posts$ = this.dataService.getPosts().pipe(

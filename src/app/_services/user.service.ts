@@ -5,11 +5,14 @@ import { Data } from '../_shared/data';
 
 const API_URL = 'http://localhost:3000/users/';
 
+/**
+ * send http request to /users
+ * retrun Observable<Data>
+ */
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-  public userData: any;
 
   constructor(private http: HttpClient) { }
 

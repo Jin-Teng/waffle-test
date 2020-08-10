@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'auth-token'; // jwt
 const USER_KEY = 'auth-user'; // phone, role
 
+/**
+ * save user status: jwt and user role
+ */
 @Injectable({
   providedIn: 'root'
 })
