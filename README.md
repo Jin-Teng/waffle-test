@@ -1,4 +1,4 @@
-## mock api
+## Mock API Routes
 ```
 /posts
 /posts/counts
@@ -11,8 +11,7 @@
 /users/profile
 ```
 
-
-## Mock API
+## JSON server
 * use JSON server
 * install `npm install json-server`
 * run JSON server `json-server --watch --routes routes.json db.json`
@@ -29,7 +28,7 @@
 * use session storage save user status (jwt & role)
 * 受限 JSON server POST 是新增沒辦法取得回傳，所以目前 login/logout 改用 get 做模擬，正確 post 方法寫在 auth.service 裡
 
-## auth
+## Auth
 * auth.interceptor 攔截 request 加入 header : jwt, Content-Type
 * auth.guard 保護 home, dashboard, article
 * member.guard 保護 book
