@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 const TOKEN_KEY = 'auth-token'; // jwt
 const USER_KEY = 'auth-user'; // phone, role
@@ -10,14 +11,21 @@ const USER_KEY = 'auth-user'; // phone, role
   providedIn: 'root'
 })
 export class TokenStorageService {
+  public isLoggedIn$: BehaviorSubject<boolean>;
 
-  constructor() { }
+  constructor() { 
+    this.isLoggedIn$ = new BehaviorSubject(!!this.getToken());
+  }
 
   signOut(): void {
+    this.isLoggedIn$.next(false);
+
     window.sessionStorage.clear();
   }
 
   public saveToken(token: string): void {
+    this.isLoggedIn$.next(true);
+
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }

@@ -4,26 +4,30 @@
 
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="/dashboard" class="nav-link" *ngIf="isLoggedIn" routerLink="dashboard">Dashboard</a>
+      </li> -->
+
+      <li class="nav-item">
+        <a href="/dashboard" class="nav-link" *ngIf="(tokenStorageService.isLoggedIn$ | async)" routerLink="dashboard">Dashboard</a>
       </li>
 
       <li class="nav-item">
-        <a href="/article" class="nav-link" *ngIf="isLoggedIn" routerLink="article">Article</a>
+        <a href="/article" class="nav-link" *ngIf="(tokenStorageService.isLoggedIn$ | async)" routerLink="article">Article</a>
       </li>
 
       <li class="nav-item">
-        <a href="/book" class="nav-link" *ngIf="isLoggedIn" routerLink="book">Book</a>
+        <a href="/book" class="nav-link" *ngIf="(tokenStorageService.isLoggedIn$ | async)" routerLink="book">Book</a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <ul class="navbar-nav ml-auto" *ngIf="!(tokenStorageService.isLoggedIn$ | async)">
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Login</a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <ul class="navbar-nav ml-auto" *ngIf="(tokenStorageService.isLoggedIn$ | async)">
       <li class="nav-item">
         <a href class="nav-link" (click)="logout()">LogOut</a>
       </li>

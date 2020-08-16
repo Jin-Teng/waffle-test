@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../_services/auth.service';
+// import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
 import { UserService } from '../_services/user.service';
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private tokenStorage: TokenStorageService,
     private userService: UserService
-  ) { }
+  ) { 
+  }
 
   ngOnInit(){
     if (this.tokenStorage.getToken()) {
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.reloadPage();
+
+        // this.reloadPage();
         this.router.navigate(['home']);
 
       },
@@ -47,8 +49,8 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  reloadPage() {
-    window.location.reload();
-  }
+  // reloadPage() {
+  //   window.location.reload();
+  // }
 
 }

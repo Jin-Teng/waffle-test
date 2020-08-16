@@ -43,7 +43,8 @@
               <!-- <td>{{item.comments}}</td> -->
               <td>0</td>
               <td>{{item.author}}</td>
-              <td>{{item.create_at | date:'yyyy/MM/dd HH:mm' }}</td>
+              <!-- <td>{{item.create_at | date:'yyyy/MM/dd HH:mm' }}</td> -->
+              <td>{{item.create_at | moment:'YYYY/MM/DD HH:mm' }}</td>
             </tr>
 
         </tbody>

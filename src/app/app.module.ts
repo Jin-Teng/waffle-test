@@ -22,6 +22,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HoverDirective } from './_directives/hover.directive';
+import { MomentPipe } from './_pipes/moment.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     HomeComponent,
     DashboardComponent,
     ArticleComponent,
-    BookComponent
+    BookComponent,
+    HoverDirective,
+    MomentPipe
   ],
   imports: [
     BrowserModule,

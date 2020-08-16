@@ -13,10 +13,12 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   role: string;
 
+
   constructor(
     private tokenStorageService: TokenStorageService,
     private userService: UserService
-  ) { }
+  ) {
+   }
 
   ngOnInit() {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
